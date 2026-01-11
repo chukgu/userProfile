@@ -1,0 +1,15 @@
+{
+    "name": "vue-profile",
+    "version": "1.0.0",
+    "description": "Vue.js Profile Page",
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build"
+    },
+    "dependencies": {
+      "vue": "^3.3.4"
+    },
+    "devDependencies": {
+      "@vue/cli-service": "^5.0.8"
+    }
+  }
