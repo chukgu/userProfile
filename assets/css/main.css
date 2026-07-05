@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-100 text-navy-950;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs font-black uppercase text-gold-500;
+  }
+
+  .section-title {
+    @apply mt-5 max-w-4xl text-3xl font-black leading-tight text-navy-950 sm:text-4xl lg:text-6xl;
+  }
+
+  .section-copy {
+    @apply mt-6 max-w-3xl text-base leading-8 text-muted sm:text-lg;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-500;
+  }
+}

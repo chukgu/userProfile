@@ -1,15 +1,24 @@
 {
-    "name": "vue-profile",
-    "version": "1.0.0",
-    "description": "Vue.js Profile Page",
-    "scripts": {
-      "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build"
-    },
-    "dependencies": {
-      "vue": "^3.3.4"
-    },
-    "devDependencies": {
-      "@vue/cli-service": "^5.0.8"
-    }
+  "name": "monthlycso-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "nuxt typecheck"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@vueuse/nuxt": "^10.11.0",
+    "nuxt": "^3.12.4",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vue-tsc": "^3.3.6"
   }
+}
