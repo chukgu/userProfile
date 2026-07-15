@@ -4,8 +4,10 @@ export interface PricingPlan {
   name: string;
   value: PlanValue;
   price: string;
-  period: string;
   description: string;
-  features: string[];
+  details: Array<{
+    label: string;
+    value: string;
+  }>;
   recommended?: boolean;
 }

@@ -5,7 +5,10 @@ export interface NavItem {
 
 export interface PainPoint {
   title: string;
-  body: string;
+  reality: string;
+  result: string;
+  resultHighlight?: string;
+  resultSuffix?: string;
 }
 
 export interface ServiceArea {
@@ -25,6 +28,7 @@ export interface ComparisonRow {
 export interface ProcessStep {
   week: string;
   title: string;
+  quote: string;
   body: string;
 }
 
@@ -32,6 +36,8 @@ export interface OutputItem {
   title: string;
   plan: string;
   body: string;
+  bodyHighlight?: string;
+  bodySuffix?: string;
 }
 
 export interface FaqItem {

@@ -3,20 +3,20 @@ import type { ServiceArea } from '~/types/content';
 export const serviceAreas: ServiceArea[] = [
   {
     key: 'strategy',
-    title: 'Strategy',
-    summary: '사업 방향과 우선순위를 정리합니다.',
-    items: ['비즈니스 모델 점검', '상품·가격 구조 분석', '월간 의사결정 아젠다 설계']
+    title: '⚡ Strategy',
+    summary: '돈이 흘러 들어오는 구조와 우선순위를 설계합니다.',
+    items: ['비즈니스 체급 점검', '상품·가격 구조 최적화', '월간 의사결정 아젠다 도출']
   },
   {
     key: 'marketing',
-    title: 'Marketing',
-    summary: '고객이 선택할 수 있는 메시지와 채널 기준을 만듭니다.',
-    items: ['고객 의도 분석', '콘텐츠 메시지 정렬', '캠페인 우선순위 점검']
+    title: '⚡ Marketing',
+    summary: '고객이 지갑을 열 수밖에 없는 명확한 트리거를 만듭니다.',
+    items: ['초정밀 고객 의도 분석', '콘텐츠/메시지 정렬', '채널 가성비 점검']
   },
   {
     key: 'sales',
-    title: 'Sales',
-    summary: '상담과 제안이 매출로 이어지는 흐름을 개선합니다.',
-    items: ['세일즈 퍼널 진단', '제안 구조 개선', '클로징 스크립트 점검']
+    title: '⚡ Sales',
+    summary: '문의와 제안이 이탈 없이 즉시 결제로 이어지게 만듭니다.',
+    items: ['세일즈 퍼널 올인원 진단', '반박 불가능한 제안 구조 개선', '즉시 먹히는 클로징 스크립트']
   }
 ];

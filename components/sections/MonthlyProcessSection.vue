@@ -3,8 +3,8 @@
     <div class="section-shell">
       <SectionHeading
         eyebrow="Monthly Process"
-        title="4주 단위의 비즈니스 실행 루프로 매월 방향을 다시 맞춥니다."
-        copy="의도 발굴에서 성과 회고까지, 반복 가능한 월간 운영 리듬을 만듭니다."
+        title="매월 굴러가는 '4주 단위 전략 시스템'"
+        copy="시장 데이터를 뜯어보는 것부터 매출 성과를 쥐는 순간까지, 멈추지 않는 지속 가능한 운영 리듬을 만듭니다. Monthly CSO와 함께하는 4주는 대표님의 사업 체질을 완전히 바꿔놓습니다."
         dark
       />
       <div class="mt-16 hidden grid-cols-4 gap-5 lg:grid">

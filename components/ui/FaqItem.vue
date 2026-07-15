@@ -9,7 +9,7 @@
       <span class="text-lg font-black text-navy-950">{{ item.question }}</span>
       <span class="text-2xl font-black text-gold-500">{{ open ? '-' : '+' }}</span>
     </button>
-    <p v-if="open" class="pb-6 text-base leading-8 text-muted">{{ item.answer }}</p>
+    <div v-if="open" class="pb-6 text-base leading-8 text-muted" v-html="item.answer" />
   </article>
 </template>
 

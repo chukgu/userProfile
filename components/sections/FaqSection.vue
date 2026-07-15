@@ -3,8 +3,8 @@
     <div class="section-shell max-w-5xl">
       <SectionHeading
         eyebrow="FAQ"
-        title="상담 전에 자주 묻는 질문을 정리했습니다."
-        copy="서비스 범위와 기대치를 분명히 맞춘 뒤 시작합니다."
+        title="상담 전에 가장 많이 나누는 질문들을 모았습니다."
+        copy="서로의 기대치를 명확히 맞추는 것부터가 건강한 성장의 첫걸음입니다."
         center
       />
       <div class="mt-12 border-t border-navy-950/10">
