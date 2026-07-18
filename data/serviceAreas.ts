@@ -18,5 +18,11 @@ export const serviceAreas: ServiceArea[] = [
     title: '⚡ Sales',
     summary: '문의와 제안이 이탈 없이 즉시 결제로 이어지게 만듭니다.',
     items: ['세일즈 퍼널 올인원 진단', '반박 불가능한 제안 구조 개선', '즉시 먹히는 클로징 스크립트']
+  },
+  {
+    key: 'growth-ops',
+    title: '⚡ Growth Ops',
+    summary: '실행과 숫자를 연결해 다음 성장을 위한 운영 리듬을 만듭니다.',
+    items: ['핵심 지표·대시보드 설계', '월간 실행 성과 리뷰', '다음 달 우선순위 재정렬']
   }
 ];

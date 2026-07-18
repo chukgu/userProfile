@@ -4,6 +4,7 @@
       <SectionHeading
         eyebrow="Methodology"
         title="의도 데이터로 고객이 선택한 이유를 가장 먼저 봅니다."
+        :title-lines="['의도 데이터로', '고객이 선택한 이유를', '가장 먼저 봅니다.']"
         copy="월구독 cso는 고객이 무엇을 검색하고, 어떤 문제를 말하고, 어디에서 망설이는지 확인한 뒤 Intent-Market Fit을 점검합니다."
       />
       <div class="grid gap-4">

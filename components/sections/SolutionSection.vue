@@ -3,7 +3,8 @@
     <div class="section-shell">
       <SectionHeading
         eyebrow="Solution"
-        title="대행이 아닌 의사결정 파트너로 비즈니스 우선순위를 설계합니다."
+        title="비즈니스 우선순위를 설계합니다."
+        title-break-after="대행이 아닌 의사결정 파트너로"
         copy="세일즈·마케팅·비즈니스 전략을 연결해 대표의 실제 상황에 맞는 가장 현실적인 실행 순서를 정리합니다."
       />
 

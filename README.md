@@ -37,7 +37,7 @@ npm run generate
 
 ```bash
 npm run generate
-python3 -m http.server 4174 --bind 127.0.0.1 --directory .output/public
+python3 -m http.server 4174 --bind 0.0.0.0 --directory .output/public
 ```
 
 브라우저에서 아래 URL로 확인합니다.

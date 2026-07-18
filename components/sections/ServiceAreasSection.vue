@@ -3,7 +3,8 @@
     <div class="section-shell">
       <SectionHeading
         eyebrow="Service Areas"
-        title="전략, 마케팅, 세일즈를 ‘하나의 성장 동력’으로 연결합니다."
+        title="‘하나의 성장 동력’으로 연결합니다."
+        title-break-after="전략, 마케팅, 세일즈를"
         copy="각 영역을 따로 떼어놓고 돈을 쓰면, 실행은 배로 늘어나지만 매출은 제자리걸음을 반복합니다. 월구독 CSO는 비즈니스의 시작부터 클로징까지, 매월 단 하나의 유기적인 기준으로 정렬합니다."
       />
 

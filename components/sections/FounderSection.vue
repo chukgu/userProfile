@@ -3,8 +3,8 @@
     <div class="section-shell">
       <SectionHeading
         eyebrow="Founder / Trust"
-        title="12년의 현업 내공을 대표님의 ‘월간 판단력’으로 전환합니다."
-        copy="👤 월구독 CSO 입니다."
+        title="‘월간 판단력’으로 전환합니다."
+        title-break-after="12년의 현업 내공을 대표님의"
       />
 
       <div class="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">

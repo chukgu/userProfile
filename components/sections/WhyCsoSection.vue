@@ -4,6 +4,7 @@
       <SectionHeading
         eyebrow="Why Monthly CSO"
         title="작은 조직일수록 의사결정의 질이 곧 성장의 속도입니다."
+        :title-lines="['작은 조직일수록', '의사결정의 질이', '곧 성장의 속도입니다.']"
         copy="정규직 C-Level을 채용하는 비용과 리스크 없이, 12년의 현업 시행착오로 축적된 단단한 판단력을 필요한 만큼만 효율적으로 구독하세요."
       />
       <div class="grid gap-4">

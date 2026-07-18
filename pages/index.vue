@@ -1,17 +1,16 @@
 <template>
   <div>
     <HeroSection />
-    <WhyCsoSection />
     <PainPointsSection />
-    <ComparisonSection />
     <SolutionSection />
+    <MonthlyProcessSection />
+    <WhyCsoSection />
+    <ComparisonSection />
     <MethodologySection />
     <ServiceAreasSection />
-    <MonthlyProcessSection />
     <PricingSection />
     <OutputsSection />
     <FounderSection />
-    <NotAServiceSection />
     <FaqSection />
     <ContactSection />
   </div>
