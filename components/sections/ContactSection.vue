@@ -2,7 +2,7 @@
   <section id="contact" class="bg-navy-950 py-24 text-cream sm:py-32">
     <div class="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
       <div>
-        <p class="eyebrow text-gold-400">CTA / Contact</p>
+        <p class="eyebrow text-gold-400">Contact</p>
         <h2 class="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
           대표의 다음 결정,
           <span class="block text-gold-400">함께 정리해볼까요?</span>
@@ -63,10 +63,16 @@
             남기고 싶은 말
             <textarea v-model="form.message" name="message" rows="3" class="bg-white p-4 text-navy-950"></textarea>
           </label>
-          <button type="submit" class="focus-ring min-h-12 bg-gold-500 px-6 text-sm font-black text-navy-950">
-            제출하기
+          <button
+            type="submit"
+            :disabled="isSubmitting"
+            class="focus-ring min-h-12 bg-gold-500 px-6 text-sm font-black text-navy-950 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {{ isSubmitting ? '제출 중...' : '제출하기' }}
           </button>
-          <a ref="mailLink" :href="mailTo" class="sr-only">메일 앱으로 문의 보내기</a>
+          <p v-if="submitMessage" aria-live="polite" class="text-sm font-bold" :class="submitSucceeded ? 'text-gold-400' : 'text-red-300'">
+            {{ submitMessage }}
+          </p>
         </form>
       </div>
     </div>
@@ -75,7 +81,10 @@
 
 <script setup lang="ts">
 const { selectedPlan, syncFromRoute } = useSelectedPlan();
-const mailLink = ref<HTMLAnchorElement | null>(null);
+const config = useRuntimeConfig();
+const isSubmitting = ref(false);
+const submitSucceeded = ref(false);
+const submitMessage = ref('');
 
 const form = reactive({
   name: '',
@@ -102,25 +111,49 @@ const concerns = [
 onMounted(syncFromRoute);
 watch(() => useRoute().query.plan, syncFromRoute);
 
-const mailTo = computed(() => {
-  const body = [
-    `이름: ${form.name}`,
-    `연락처: ${form.phone}`,
-    `이메일: ${form.email}`,
-    `브랜드/회사명: ${form.company || '-'}`,
-    `사업 유형: ${form.businessType}`,
-    `현재 가장 고민되는 영역: ${form.concerns.join(', ') || '-'}`,
-    `희망하는 구독 플랜: ${selectedPlan.value || '-'}`,
-    '',
-    '남기고 싶은 말:',
-    form.message || '-'
-  ].join('\n');
+async function submitContact() {
+  if (isSubmitting.value) return;
 
-  return `mailto:official@monthlycso.com?subject=${encodeURIComponent(`[월구독 CSO 상담] ${form.name}`)}&body=${encodeURIComponent(body)}`;
-});
+  isSubmitting.value = true;
+  submitSucceeded.value = false;
+  submitMessage.value = '';
 
-function submitContact() {
-  mailLink.value?.click();
+  const body = new URLSearchParams({
+    name: form.name,
+    phone: form.phone,
+    email: form.email,
+    company: form.company,
+    businessType: form.businessType,
+    concerns: form.concerns.join(', '),
+    plan: selectedPlan.value,
+    message: form.message
+  });
+
+  try {
+    const response = await fetch(config.public.contactFormUrl, {
+      method: 'POST',
+      body
+    });
+    const result = (await response.json()) as { success: boolean; message?: string };
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || '상담 신청을 처리하지 못했습니다.');
+    }
+
+    submitSucceeded.value = true;
+    submitMessage.value = result.message || '상담 신청이 접수되었습니다.';
+    form.name = '';
+    form.phone = '';
+    form.email = '';
+    form.company = '';
+    form.businessType = '1인 기업';
+    form.concerns = [];
+    form.message = '';
+  } catch {
+    submitMessage.value = '제출하지 못했습니다. 잠시 후 다시 시도해 주세요.';
+  } finally {
+    isSubmitting.value = false;
+  }
 }
 
 import { pricingPlans } from '~/data/pricing';

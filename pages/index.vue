@@ -19,6 +19,11 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
 
+onMounted(() => {
+  window.history.scrollRestoration = 'manual';
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+});
+
 useSeoMeta({
   title: '월구독 CSO',
   description:

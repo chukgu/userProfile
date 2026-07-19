@@ -2,7 +2,7 @@
   <section id="founder" class="bg-paper py-24 sm:py-32">
     <div class="section-shell">
       <SectionHeading
-        eyebrow="Founder / Trust"
+        eyebrow="Trust"
         title="‘월간 판단력’으로 전환합니다."
         title-break-after="12년의 현업 내공을 대표님의"
       />

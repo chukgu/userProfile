@@ -32,7 +32,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://monthlycso.com',
-      contactFormUrl: process.env.NUXT_PUBLIC_CONTACT_FORM_URL || '',
+      contactFormUrl:
+        process.env.NUXT_PUBLIC_CONTACT_FORM_URL ||
+        'https://script.google.com/macros/s/AKfycbwgTgcBszQUekBPrc5FGwAnQJQXgbUAIZx57y4DLxnDqgdrLn1rbFa3g2jsZZHueP9VSQ/exec',
       ga4Id: process.env.NUXT_PUBLIC_GA4_ID || '',
       clarityId: process.env.NUXT_PUBLIC_CLARITY_ID || ''
     }
