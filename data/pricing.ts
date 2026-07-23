@@ -4,7 +4,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: '☕ 커피챗 (Demo)',
     value: 'demo',
-    price: '99,000원 / 1회',
+    originalPrice: '99,000원 / 1회',
+    discountRate: 50,
+    price: '49,500원 / 1회',
     description: '“현재 마주한 비즈니스 고민을 가볍고 빠르게 진단합니다.”',
     details: [
       { label: '미팅 주기', value: '단발성 (1회, 50분)' },
@@ -15,7 +17,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: '🌱 라이트 (인텐트 진단)',
     value: 'lite',
-    price: '490,000원 / 월',
+    originalPrice: '490,000원 / 월',
+    discountRate: 50,
+    price: '245,000원 / 월',
     description: '“대표님의 핵심 문제 1가지를 칼같이 해결하는 원포인트 솔루션”',
     details: [
       { label: '미팅 주기', value: '주 1회 집중 커피챗 (60분)' },
@@ -26,7 +30,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: '🚀 스탠다드 (성장 엔진)',
     value: 'standard',
-    price: '1,490,000원 / 월',
+    originalPrice: '1,490,000원 / 월',
+    discountRate: 50,
+    price: '745,000원 / 월',
     description: '“세일즈와 마케팅을 하나로 꿰어 강제 성장 구조를 만드는 정기 구독”',
     details: [
       { label: '미팅 주기', value: '주 1회 정기 미팅' },
@@ -38,7 +44,9 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: '👑 프로 (밀착 파트너)',
     value: 'pro',
-    price: '3,000,000원 / 월',
+    originalPrice: '3,000,000원 / 월',
+    discountRate: 50,
+    price: '1,500,000원 / 월',
     description: '“인하우스 파트타임 CSO를 내 사업의 브레인으로 이식하는 밀착형 플랜”',
     details: [
       { label: '미팅 주기', value: '주 1회 온/오프라인 미팅 (밀착 3시간)' },

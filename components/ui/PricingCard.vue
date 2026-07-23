@@ -13,7 +13,17 @@
     <p class="mt-3 text-sm font-bold text-muted">{{ plan.description }}</p>
     <div class="mt-8">
       <p class="text-xs font-black text-gold-600">금액</p>
-      <strong class="mt-1 block break-keep font-display text-2xl font-black text-navy-950 sm:text-3xl">{{ plan.price }}</strong>
+      <div v-if="plan.originalPrice && plan.discountRate" class="mt-2 flex flex-wrap items-center gap-2">
+        <span class="text-sm font-bold text-muted line-through decoration-2">
+          {{ plan.originalPrice }}
+        </span>
+        <span class="bg-gold-500 px-2 py-1 text-xs font-black text-navy-950">
+          {{ plan.discountRate }}% 할인
+        </span>
+      </div>
+      <strong class="mt-1 block break-keep font-display text-2xl font-black text-navy-950 sm:text-3xl">
+        {{ plan.price }}
+      </strong>
     </div>
     <dl class="mt-8 grid gap-4">
       <div v-for="detail in plan.details" :key="detail.label">
