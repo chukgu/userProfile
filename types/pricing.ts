@@ -4,8 +4,6 @@ export interface PricingPlan {
   name: string;
   value: PlanValue;
   price: string;
-  originalPrice?: string;
-  discountRate?: number;
   description: string;
   details: Array<{
     label: string;
