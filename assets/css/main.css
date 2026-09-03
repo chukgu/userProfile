@@ -1,18 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-paper: #f7f5f0;
+  --color-paper-2: #eeeae2;
+  --color-ink: #20201e;
+  --color-ink-2: #393936;
+  --color-muted: #6f6c66;
+  --color-rule: #d8d2c8;
+  --color-accent: #c87355;
+  --color-accent-ink: #20201e;
+  --color-focus: #8e432e;
+  --color-navy: #172a3a;
+  --font-display: 'Noto Sans KR', 'Pretendard', sans-serif;
+  --font-body: 'Noto Sans KR', 'Pretendard', sans-serif;
+  --font-wordmark: 'Cormorant Garamond', Georgia, serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-base: 240ms;
+}
+
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4
+ * genre: warm editorial · macrostructure: conversational letter · design-system: DESIGN.md · designed-as-app
+ */
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-paper text-ink antialiased;
+    overflow-x: clip;
+    font-family: var(--font-body);
   }
 
   ::selection {
-    @apply bg-gold-100 text-navy-950;
+    background: var(--color-accent);
+    color: var(--color-paper);
   }
 
   a,
@@ -23,15 +52,17 @@
 
 @layer components {
   .section-shell {
-    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
   }
 
   .eyebrow {
-    @apply font-display text-xs font-black uppercase text-gold-500;
+    @apply text-xs font-bold uppercase tracking-[0.16em] text-muted;
   }
 
   .section-title {
-    @apply mt-5 max-w-4xl text-3xl font-black leading-tight text-navy-950 sm:text-4xl lg:text-6xl;
+    @apply mt-5 max-w-4xl text-3xl font-medium leading-[1.18] tracking-[-0.025em] text-navy-950 sm:text-4xl lg:text-6xl;
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
 
   .section-copy {
@@ -39,6 +70,30 @@
   }
 
   .focus-ring {
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-500;
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4;
+    outline-color: var(--color-focus);
+  }
+
+  .form-control {
+    @apply min-h-12 w-full rounded-xl border bg-paper px-4 text-navy-950 outline outline-2 outline-offset-1 outline-transparent transition-colors;
+    border-color: var(--color-rule);
+  }
+
+  .form-control:hover {
+    border-color: var(--color-muted);
+  }
+
+  .form-control:focus-visible {
+    border-color: var(--color-focus);
+    outline-color: var(--color-focus);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

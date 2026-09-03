@@ -1,11 +1,11 @@
 <template>
-  <footer class="border-t border-navy-950/10 bg-navy-950 px-5 py-10 text-cream">
-    <div class="section-shell flex flex-col gap-6 px-0 sm:flex-row sm:items-center sm:justify-between">
-      <div>
-        <p class="font-display text-lg font-black">monthlycso</p>
-        <p class="mt-2 text-sm text-cream/65">Decision Partner for Small Business Growth</p>
+  <footer class="bg-navy-950 py-10 text-cream sm:py-14">
+    <div class="section-shell">
+      <p class="max-w-3xl text-3xl font-medium leading-snug tracking-[-0.025em] sm:text-4xl">대표의 다음 결정을 함께 설계합니다.</p>
+      <div class="mt-12 flex flex-col gap-4 border-t border-cream/20 pt-5 text-sm text-cream/60 sm:flex-row sm:items-center sm:justify-between">
+        <p class="font-wordmark text-xl text-cream">monthlycso</p>
+        <p>© {{ new Date().getFullYear() }} monthlycso</p>
       </div>
-      <p class="text-xs font-bold uppercase text-cream/55">© {{ new Date().getFullYear() }} monthlycso</p>
     </div>
   </footer>
 </template>

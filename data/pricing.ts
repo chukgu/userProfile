@@ -2,7 +2,7 @@ import type { PricingPlan } from '~/types/pricing';
 
 export const pricingPlans: PricingPlan[] = [
   {
-    name: '☕ 커피챗 (Demo)',
+    name: '커피챗 (Demo)',
     value: 'demo',
     price: '99,000원 / 1회',
     description: '“현재 마주한 비즈니스 고민을 가볍고 빠르게 진단합니다.”',
@@ -13,7 +13,7 @@ export const pricingPlans: PricingPlan[] = [
     ]
   },
   {
-    name: '🌱 라이트 (인텐트 진단)',
+    name: '라이트 (인텐트 진단)',
     value: 'lite',
     price: '490,000원 / 월',
     description: '“대표님의 핵심 문제 1가지를 칼같이 해결하는 원포인트 솔루션”',
@@ -24,10 +24,10 @@ export const pricingPlans: PricingPlan[] = [
     ]
   },
   {
-    name: '🚀 스탠다드 (성장 엔진)',
+    name: '스탠다드',
     value: 'standard',
     price: '1,490,000원 / 월',
-    description: '“세일즈와 마케팅을 하나로 꿰어 강제 성장 구조를 만드는 정기 구독”',
+    description: '“대표의 판단을 실행과 회고로 연결하는 정기 구독”',
     details: [
       { label: '미팅 주기', value: '주 1회 정기 미팅' },
       { label: '주요 내용', value: '세일즈 + 마케팅 + 콘텐츠 전반 점검 및 신규 성장 전략 플래닝' },
@@ -36,10 +36,10 @@ export const pricingPlans: PricingPlan[] = [
     recommended: true
   },
   {
-    name: '👑 프로 (밀착 파트너)',
+    name: '프로 (밀착 파트너)',
     value: 'pro',
     price: '3,000,000원 / 월',
-    description: '“인하우스 파트타임 CSO를 내 사업의 브레인으로 이식하는 밀착형 플랜”',
+    description: '“내부 의사결정 과정까지 함께하는 밀착형 플랜”',
     details: [
       { label: '미팅 주기', value: '주 1회 온/오프라인 미팅 (밀착 3시간)' },
       { label: '주요 내용', value: '대표님과 한 팀이 되어 내부 회의 참석 + 신규 비즈니스 모델(BM) 설계' },
@@ -47,7 +47,7 @@ export const pricingPlans: PricingPlan[] = [
     ]
   },
   {
-    name: '🌟 자율 주제 (B2B 전용)',
+    name: '자율 주제 (B2B 전용)',
     value: 'b2b',
     price: 'TBD (프로젝트 범위별 상의)',
     description: '“B2B 세일즈, 신사업 판단 등 특정 과제를 해결하기 위한 맞춤형 프로젝트”',

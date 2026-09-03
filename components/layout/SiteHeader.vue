@@ -1,11 +1,8 @@
 <template>
-  <header class="fixed left-0 top-0 z-50 w-full border-b border-navy-950/10 bg-paper/90 backdrop-blur-xl">
-    <nav class="section-shell flex h-20 items-center justify-between gap-6" aria-label="Primary">
-      <NuxtLink to="#hero" class="focus-ring flex items-center gap-3" @click="isOpen = false">
-        <span class="grid h-10 w-10 place-items-center bg-navy-950 font-display text-xs font-black text-cream">
-          CSO
-        </span>
-        <span class="font-display text-sm font-black text-navy-950">monthlycso</span>
+  <header class="fixed left-0 top-0 z-50 w-full bg-paper">
+    <nav class="section-shell flex h-16 items-center justify-between border-b border-navy-950/15 lg:h-20" aria-label="Primary">
+      <NuxtLink to="#hero" class="focus-ring font-wordmark text-2xl font-semibold tracking-[-0.02em] text-navy-950" @click="isOpen = false">
+        monthlycso
       </NuxtLink>
 
       <div class="hidden items-center gap-8 lg:flex">
@@ -13,13 +10,15 @@
           v-for="item in navItems"
           :key="item.href"
           :to="item.href"
-          class="text-sm font-bold text-muted transition hover:text-navy-950"
+          class="whitespace-nowrap text-sm font-medium text-muted transition-colors hover:text-navy-950"
         >
           {{ item.label }}
         </NuxtLink>
       </div>
 
-      <BaseButton to="#contact" class="hidden lg:inline-flex">월구독 상담하기</BaseButton>
+      <NuxtLink to="#contact" class="focus-ring hidden whitespace-nowrap text-sm font-bold text-navy-950 lg:inline-flex">
+        상담하기 <span aria-hidden="true" class="ml-2">↗</span>
+      </NuxtLink>
 
       <button
         type="button"
@@ -47,7 +46,7 @@
         >
           {{ item.label }}
         </NuxtLink>
-        <BaseButton to="#contact" @click="isOpen = false">월구독 상담하기</BaseButton>
+        <BaseButton to="#contact" @click="isOpen = false">상담하기</BaseButton>
       </div>
     </div>
   </header>

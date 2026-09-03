@@ -1,59 +1,29 @@
 <template>
-  <section id="hero" class="relative overflow-hidden bg-navy-950 pt-36 text-cream sm:pt-44">
-    <div class="section-shell grid min-h-[760px] items-center gap-12 pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:pb-32">
-      <div>
-        <p class="eyebrow text-gold-400">Your Monthly CSO</p>
-        <h1 class="mt-6 max-w-5xl text-5xl font-black leading-tight text-white sm:text-6xl lg:text-7xl">
-          대행이 아니라
-          <span class="block whitespace-nowrap text-gold-400">의사결정 파트너입니다.</span>
-        </h1>
-        <p class="mt-8 max-w-3xl text-lg leading-9 text-cream/75 sm:text-xl">
-          세일즈, 마케팅, 비즈니스 전략은 따로 움직여선 안 됩니다. Monthly CSO는 대표의 현재 체급과 목표를
-          냉정하게 분석하여, 지금 당장 움직일 수 있는 가장 현실적인 성장 로드맵을 설계합니다.
-        </p>
-        <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-          <BaseButton to="#contact" class="!bg-white/5 text-lg !text-white hover:!bg-white/10 sm:text-xl">
-            월구독 상담하기
-          </BaseButton>
-        </div>
-      </div>
-
-      <div class="relative">
-        <div class="border border-cream/15 bg-white/5 p-5 shadow-soft backdrop-blur">
-          <div class="border border-cream/10 bg-navy-900 p-6">
-            <p class="text-sm font-black text-gold-400">Monthly Decision Board</p>
-            <div class="mt-8 grid gap-4">
-              <div
-                v-for="item in boardItems"
-                :key="item.title"
-                class="grid grid-cols-[96px_1fr] gap-4 border-b border-cream/10 pb-4 last:border-b-0 last:pb-0"
-              >
-                <span class="text-xs font-black uppercase text-cream/45">{{ item.label }}</span>
-                <div>
-                  <p class="font-black text-white">{{ item.title }}</p>
-                </div>
-              </div>
-            </div>
+  <section id="hero" class="bg-paper pt-28 sm:pt-36">
+    <div class="section-shell pb-20 sm:pb-28">
+      <div class="grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.65fr)] lg:items-center lg:gap-20">
+        <div>
+          <p class="text-sm font-medium text-muted">대표를 위한 월구독 CSO</p>
+          <h1 class="mt-6 min-w-0 max-w-[14ch] text-[clamp(2.8rem,6vw,4.25rem)] font-medium leading-[1.14] tracking-[-0.04em] text-ink [overflow-wrap:anywhere]">
+            요즘, 무슨 결정이<br />제일 어렵나요?
+          </h1>
+          <div class="relative mt-8 inline-block">
+            <p class="text-xl font-medium leading-relaxed text-ink sm:text-2xl">혼자 결정해야 하는 대표에게<br /><strong class="font-semibold">월구독 CSO가 함께합니다.</strong></p>
+            <svg class="absolute -bottom-3 left-0 h-3 w-52 text-gold-500" viewBox="0 0 210 12" fill="none" aria-hidden="true"><path d="M2 8C51 2 132 3 208 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" /></svg>
+          </div>
+          <div class="mt-11">
+            <NuxtLink to="#contact" class="focus-ring group inline-flex min-h-12 items-center whitespace-nowrap rounded-xl bg-navy-950 px-6 text-sm font-bold text-white transition-colors hover:bg-navy-800">
+              내 고민부터 이야기하기 <span class="ml-3 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+            </NuxtLink>
           </div>
         </div>
+        <aside class="relative rotate-[1.25deg] rounded-[1.25rem] bg-cream p-7 shadow-[0_18px_50px_color-mix(in_srgb,var(--color-ink)_8%,transparent)] sm:p-9">
+          <span class="absolute -top-4 left-8 -rotate-3 bg-gold-500 px-3 py-1 text-xs font-medium text-ink">CSO note</span>
+          <p class="text-sm text-muted">오늘 대표님의 머릿속</p>
+          <p class="mt-5 text-xl font-medium leading-relaxed text-ink">광고를 더 해야 할지,<br />가격을 바꿔야 할지,<br />지금 하는 일을 계속해야 할지.</p>
+          <p class="mt-8 border-t border-ink/15 pt-5 text-sm leading-7 text-muted">답부터 정하지 않습니다.<br />무엇을 판단해야 하는지부터 같이 봅니다.</p>
+        </aside>
       </div>
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-const boardItems = [
-  {
-    label: '🎯 Focus',
-    title: "대표의 '다음 결정'에만 집중"
-  },
-  {
-    label: '🔗 Align',
-    title: '흩어진 세일즈와 마케팅을 하나로'
-  },
-  {
-    label: '📈 Review',
-    title: '데이터와 결과를 기준으로 다음 달을 설계'
-  }
-];
-</script>

@@ -1,32 +1,26 @@
 <template>
-  <section id="service-areas" class="bg-paper py-24 sm:py-32">
-    <div class="section-shell">
-      <SectionHeading
-        eyebrow="Service Areas"
-        title="‘하나의 성장 동력’으로 연결합니다."
-        title-break-after="전략, 마케팅, 세일즈를"
-        copy="각 영역을 따로 떼어놓고 돈을 쓰면, 실행은 배로 늘어나지만 매출은 제자리걸음을 반복합니다. 월구독 CSO는 비즈니스의 시작부터 클로징까지, 매월 단 하나의 유기적인 기준으로 정렬합니다."
-      />
-
-      <div class="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <article
-          v-for="area in serviceAreas"
-          :key="area.title"
-          class="flex min-h-[320px] flex-col border border-navy-950/10 bg-white p-7"
-        >
-          <h3 class="text-2xl font-black text-navy-950">{{ area.title }}</h3>
-          <p class="mt-4 text-sm font-bold leading-7 text-gold-600">&quot;{{ area.summary }}&quot;</p>
-          <ul class="mt-auto grid gap-2 pt-8">
-            <li v-for="item in area.items" :key="item" class="text-sm font-bold text-navy-800">
-              {{ item }}
-            </li>
-          </ul>
-        </article>
+  <section id="framework" class="bg-paper py-20 sm:py-28">
+    <div class="section-shell grid gap-12 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-24">
+      <div>
+        <p class="text-sm font-medium text-gold-600">monthlycso가 하는 일</p>
+        <h2 class="mt-5 max-w-lg text-3xl font-medium leading-snug tracking-[-0.025em] text-ink sm:text-5xl">복잡한 문제를<br />한 번에 풀려고<br />하지 않습니다.</h2>
+        <p class="mt-7 max-w-md leading-7 text-muted">대화를 나누며 문제의 순서를 찾고, 이번 주에 움직일 수 있는 크기로 바꿉니다.</p>
+      </div>
+      <div class="space-y-3 lg:pt-12">
+        <div v-for="(step, index) in steps" :key="step.title" class="flex gap-5 rounded-2xl px-5 py-5" :class="index % 2 ? 'bg-cream sm:ml-10' : 'bg-cream/60 sm:mr-10'">
+          <span class="mt-1 text-gold-600" aria-hidden="true">→</span>
+          <div><h3 class="text-xl font-medium text-ink">{{ step.title }}</h3><p class="mt-2 leading-7 text-muted">{{ step.body }}</p></div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { serviceAreas } from '~/data/serviceAreas';
+const steps = [
+  { title: '문제를 같이 보고', body: '말씀하신 고민 뒤에 숨어 있는 진짜 질문을 찾습니다.' },
+  { title: '무엇을 할지 정하고', body: '지금 필요한 선택과 당분간 하지 않을 일을 함께 구분합니다.' },
+  { title: '실행 가능한 단위로 바꾸고', body: '결정을 이번 주에 움직일 수 있는 행동으로 작게 나눕니다.' },
+  { title: '실제로 뭐가 달라졌는지 봅니다', body: '결과를 솔직하게 돌아보고 다음 판단의 근거로 남깁니다.' }
+];
 </script>

@@ -12,27 +12,29 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#08111f',
-          900: '#0d1b2a',
-          800: '#13243a',
-          700: '#1b3555'
+          950: 'var(--color-navy)',
+          900: 'var(--color-navy)',
+          800: 'var(--color-ink-2)',
+          700: 'var(--color-accent)'
         },
-        cream: '#f7f2e8',
-        paper: '#fbfaf6',
+        cream: 'var(--color-paper-2)',
+        paper: 'var(--color-paper)',
         gold: {
-          500: '#b99a5f',
-          400: '#d4b06f',
-          100: '#efe1c4'
+          600: 'var(--color-accent)',
+          500: 'var(--color-accent)',
+          400: 'var(--color-rule)',
+          100: 'var(--color-paper-2)'
         },
-        ink: '#182231',
-        muted: '#6d7480'
+        ink: 'var(--color-ink)',
+        muted: 'var(--color-muted)'
       },
       fontFamily: {
-        sans: ['Pretendard', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'Pretendard', 'system-ui', 'sans-serif']
+        sans: ['var(--font-body)'],
+        display: ['var(--font-display)'],
+        wordmark: ['var(--font-wordmark)']
       },
       boxShadow: {
-        soft: '0 24px 80px rgba(8, 17, 31, 0.10)'
+        soft: '0 24px 80px color-mix(in srgb, var(--color-ink) 10%, transparent)'
       }
     }
   },

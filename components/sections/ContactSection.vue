@@ -1,39 +1,37 @@
 <template>
-  <section id="contact" class="bg-navy-950 py-24 text-cream sm:py-32">
-    <div class="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+  <section id="contact" class="bg-cream py-20 sm:py-28 lg:py-36">
+    <div class="section-shell grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-24">
       <div>
-        <p class="eyebrow text-gold-400">Contact</p>
-        <h2 class="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl">
-          대표의 다음 결정,
-          <span class="block text-gold-400">함께 정리해볼까요?</span>
-        </h2>
+        <p class="text-sm font-medium text-muted">Start a conversation</p>
+        <h2 class="mt-5 text-4xl font-bold leading-tight tracking-[-0.045em] text-navy-950 sm:text-6xl">다음 결정을<br />같이 정합니다.</h2>
+        <p class="mt-8 max-w-md leading-7 text-muted">완성된 계획이 없어도 괜찮습니다. 지금 가장 오래 붙잡고 있는 문제부터 적어주세요.</p>
       </div>
 
-      <div class="border border-cream/15 bg-white/5 p-6 sm:p-8">
+      <div class="border-t border-navy-950/25 pt-8">
         <form class="grid gap-5" @submit.prevent="submitContact">
           <div class="grid gap-5 sm:grid-cols-2">
-            <label class="grid gap-2 text-sm font-bold">
+            <label class="grid gap-2 text-sm font-medium text-navy-950">
               이름
-              <input v-model="form.name" name="name" required class="min-h-12 bg-white px-4 text-navy-950" />
+              <input v-model="form.name" name="name" required class="form-control" />
             </label>
-            <label class="grid gap-2 text-sm font-bold">
+            <label class="grid gap-2 text-sm font-medium text-navy-950">
               연락처
-              <input v-model="form.phone" name="phone" required class="min-h-12 bg-white px-4 text-navy-950" />
+              <input v-model="form.phone" name="phone" required class="form-control" />
             </label>
           </div>
           <div class="grid gap-5 sm:grid-cols-2">
-            <label class="grid gap-2 text-sm font-bold">
+            <label class="grid gap-2 text-sm font-medium text-navy-950">
               이메일
-              <input v-model="form.email" name="email" type="email" required class="min-h-12 bg-white px-4 text-navy-950" />
+              <input v-model="form.email" name="email" type="email" required class="form-control" />
             </label>
-            <label class="grid gap-2 text-sm font-bold">
+            <label class="grid gap-2 text-sm font-medium text-navy-950">
               브랜드/회사명
-              <input v-model="form.company" name="company" class="min-h-12 bg-white px-4 text-navy-950" />
+              <input v-model="form.company" name="company" class="form-control" />
             </label>
           </div>
-          <label class="grid gap-2 text-sm font-bold">
+          <label class="grid gap-2 text-sm font-medium text-navy-950">
             사업 유형
-            <select v-model="form.businessType" name="businessType" class="min-h-12 bg-white px-4 text-navy-950">
+            <select v-model="form.businessType" name="businessType" class="form-control">
               <option>1인 기업</option>
               <option>스타트업</option>
               <option>로컬 비즈니스</option>
@@ -42,35 +40,35 @@
               <option>기타</option>
             </select>
           </label>
-          <fieldset class="grid gap-3 text-sm font-bold">
+          <fieldset class="grid gap-3 text-sm font-medium text-navy-950">
             <legend>현재 가장 고민되는 영역</legend>
             <div class="grid gap-3 sm:grid-cols-2">
-              <label v-for="concern in concerns" :key="concern" class="flex items-start gap-2 text-sm font-medium text-cream/80">
+              <label v-for="concern in concerns" :key="concern" class="flex items-start gap-2 text-sm text-muted">
                 <input v-model="form.concerns" type="checkbox" name="concerns" :value="concern" class="mt-1" />
                 <span>{{ concern }}</span>
               </label>
             </div>
           </fieldset>
-          <label class="grid gap-2 text-sm font-bold">
+          <label class="grid gap-2 text-sm font-medium text-navy-950">
             희망하는 구독 플랜
-            <select v-model="selectedPlan" name="plan" class="min-h-12 bg-white px-4 text-navy-950">
+            <select v-model="selectedPlan" name="plan" class="form-control">
               <option v-for="plan in pricingPlans" :key="plan.value" :value="plan.value">
                 {{ plan.name }}
               </option>
             </select>
           </label>
-          <label class="grid gap-2 text-sm font-bold">
+          <label class="grid gap-2 text-sm font-medium text-navy-950">
             남기고 싶은 말
-            <textarea v-model="form.message" name="message" rows="3" class="bg-white p-4 text-navy-950"></textarea>
+            <textarea v-model="form.message" name="message" rows="4" class="form-control py-3"></textarea>
           </label>
           <button
             type="submit"
             :disabled="isSubmitting"
-            class="focus-ring min-h-12 bg-gold-500 px-6 text-sm font-black text-navy-950 disabled:cursor-not-allowed disabled:opacity-60"
+            class="focus-ring min-h-12 whitespace-nowrap bg-navy-950 px-6 text-sm font-bold text-white transition-colors hover:bg-navy-800 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {{ isSubmitting ? '제출 중...' : '제출하기' }}
           </button>
-          <p v-if="submitMessage" aria-live="polite" class="text-sm font-bold" :class="submitSucceeded ? 'text-gold-400' : 'text-red-300'">
+          <p v-if="submitMessage" aria-live="polite" class="text-sm font-bold text-navy-950">
             {{ submitMessage }}
           </p>
         </form>
