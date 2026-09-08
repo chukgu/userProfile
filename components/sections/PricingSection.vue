@@ -9,13 +9,14 @@
           <p class="mt-5 text-2xl font-medium text-ink">1,490,000원 <span class="text-base font-normal text-muted">/ 월</span></p>
           <p class="mt-8 max-w-xl text-lg leading-8 text-muted">매주 대표의 의사결정을 함께 만들고, 판단을 실행 구조와 월간 회고로 연결합니다.</p>
           <ol class="mt-10 grid gap-3 text-sm text-ink/75 sm:grid-cols-2">
-            <li>Weekly Strategy Session</li><li>Intent Market Fit</li><li>Decision Priority</li><li>Execution Structure</li><li>Monthly Impact Review</li>
+            <li>주 1회 정기 미팅 (3시간)</li><li>Intent Market Fit</li><li>Decision Priority</li><li>Execution Structure</li><li>Monthly Impact Review</li>
           </ol>
           <button type="button" class="focus-ring mt-10 min-h-12 whitespace-nowrap rounded-xl bg-navy-950 px-6 text-sm font-bold text-white transition-colors hover:bg-navy-800" @click="selectPlan('standard')">스탠다드 상담하기</button>
         </article>
         <div class="divide-y divide-ink/10 rounded-[1.5rem] bg-cream/60 px-7">
           <article v-for="plan in secondaryPlans" :key="plan.value" class="py-7 text-ink">
             <div class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"><h3 class="font-medium">{{ cleanName(plan.name) }}</h3><p class="text-sm text-muted">{{ plan.price }}</p></div>
+            <p class="mt-3 text-sm leading-6 text-muted">{{ meetingSchedule(plan) }}</p>
             <button type="button" class="focus-ring mt-4 whitespace-nowrap text-sm text-muted hover:text-ink" @click="selectPlan(plan.value)">이 관계 알아보기 →</button>
           </article>
         </div>
@@ -30,4 +31,6 @@ import { pricingPlans } from '~/data/pricing';
 const { selectPlan } = useSelectedPlan();
 const secondaryPlans = pricingPlans.filter((plan) => plan.value !== 'standard');
 const cleanName = (name: string) => name.replace(/^\p{Extended_Pictographic}\uFE0F?\s*/u, '');
+const meetingSchedule = (plan: (typeof pricingPlans)[number]) =>
+  plan.details.find((detail) => detail.label === '미팅 주기')?.value ?? '';
 </script>
