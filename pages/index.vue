@@ -3,12 +3,15 @@
     <HeroSection />
     <PainPointsSection />
     <SolutionSection />
-    <ServiceAreasSection />
-    <NextDecisionSection />
     <MonthlyProcessSection />
-    <DecisionLogSection />
+    <WhyCsoSection />
+    <ComparisonSection />
+    <MethodologySection />
+    <ServiceAreasSection />
     <PricingSection />
+    <OutputsSection />
     <FounderSection />
+    <FaqSection />
     <ContactSection />
   </div>
 </template>
