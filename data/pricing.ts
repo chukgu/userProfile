@@ -29,7 +29,7 @@ export const pricingPlans: PricingPlan[] = [
     price: '1,490,000원 / 월',
     description: '“세일즈와 마케팅을 하나로 꿰어 강제 성장 구조를 만드는 정기 구독”',
     details: [
-      { label: '미팅 주기', value: '주 1회 정기 미팅' },
+      { label: '미팅 주기', value: '주 1회 정기 미팅 (3시간)' },
       { label: '주요 내용', value: '세일즈 + 마케팅 + 콘텐츠 전반 점검 및 신규 성장 전략 플래닝' },
       { label: '남는 레거시', value: '의도-시장 적합성(인텐트 마켓 핏) 리포트 제공' }
     ],
@@ -41,7 +41,7 @@ export const pricingPlans: PricingPlan[] = [
     price: '3,000,000원 / 월',
     description: '“인하우스 파트타임 CSO를 내 사업의 브레인으로 이식하는 밀착형 플랜”',
     details: [
-      { label: '미팅 주기', value: '주 1회 온/오프라인 미팅 (밀착 3시간)' },
+      { label: '미팅 주기', value: '주 1회 밀착케어 (원데이 전일 출근)' },
       { label: '주요 내용', value: '대표님과 한 팀이 되어 내부 회의 참석 + 신규 비즈니스 모델(BM) 설계' },
       { label: '남는 레거시', value: 'CSO 비즈니스 임팩트 리포트 또는 과업 관련 커스텀 플래닝' }
     ]
